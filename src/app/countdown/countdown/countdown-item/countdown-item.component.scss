@@ -1,0 +1,86 @@
+:host::ng-deep {
+  .flip-card {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+    border-radius: .1em;
+    width: 35px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 2rem;
+    color: #333;
+
+    .top,
+    .bottom,
+    .top-flip,
+    .bottom-flip {
+      height: .25em;
+      line-height: 1;
+      padding: .25em;
+      overflow: hidden;
+    }
+
+    .top,
+    .top-flip {
+      background-color: #f7f7f7;
+      border-top-right-radius: .1em;
+      border-top-left-radius: .1em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom,
+    .bottom-flip {
+      background-color: white;
+      display: flex;
+      align-items: flex-end;
+      border-bottom-right-radius: .1em;
+      border-bottom-left-radius: .1em;
+    }
+
+
+    .top-flip {
+      position: absolute;
+      animation: flip-top 250ms ease-in;
+      transform-origin: bottom;
+    }
+
+    .bottom-flip {
+      position: absolute;
+      bottom: 0;
+      animation: flip-bottom 250ms ease-out 250ms;
+      transform-origin: top;
+      transform: rotateX(90deg);
+    }
+
+  }
+}
+
+@keyframes flip-top {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.container-segment {
+  display: flex;
+  flex-direction: column;
+  gap: .1em;
+  align-items: center;
+
+  .title {
+    font-size: 14px;
+    color: #000;
+  }
+
+  .segment {
+    display: flex;
+    gap: .1em;
+  }
+}

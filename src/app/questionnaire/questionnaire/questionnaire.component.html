@@ -1,0 +1,11 @@
+<form [formGroup]="form" (submit)="onSend()">
+    <input type="text" placeholder="name" formControlName="name">
+
+    <input type="radio" id="yes" value="true" formControlName="come">
+    <label for="yes">Yes</label>
+
+    <input type="radio" id="no" value="false" formControlName="come">
+    <label for="no">No</label>
+
+    <button type="submit">Send</button>
+</form>
