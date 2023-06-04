@@ -19,6 +19,26 @@ header {
   align-items: center;
   justify-content: flex-end;
   color: white;
+  position: relative;
+
+  h1 {
+    font-weight: 200;
+    font-style: italic;
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+
+    &:first-child {
+      font-size: 35px;
+    }
+
+    &:last-child {
+      font-size: 20px;
+      bottom: 0;
+    }
+  }
 }
 
 .text {
@@ -30,15 +50,15 @@ header {
   font-weight: 300;
 
   p:first-child {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 25px;
     padding: 0 2px;
     font-weight: 220;
   }
   p {
-    font-size: 30px;
+    font-size: 25px;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 100;
     margin-bottom: 25px;
   }
 }
@@ -50,8 +70,9 @@ header {
   text-align: center;
 
   & > p {
+    font-weight: 100;
+    font-style: italic;
     font-size: 40px;
-    color: #676767;
   }
 }
 
@@ -76,7 +97,7 @@ header {
 
 @media only screen and (min-width: 1100px) {
   header {
-    background-position: 0 -500px;
+    background-position: 0 -550px;
   }
 
   .question {

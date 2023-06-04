@@ -41,6 +41,11 @@ $wedding-invitation-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: "Annabelle";
+  src: url("/assets/fonts/annabelle.ttf");
+}
+
 *,
 *:after,
 *:before {
@@ -54,6 +59,14 @@ $wedding-invitation-theme: mat.define-light-theme(
   iframe {
     max-width: 640px;
     width: 100vw;
+  }
+
+  & > p {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 27px;
+    white-space: nowrap;
+    margin-bottom: 15px;
   }
 }
 
