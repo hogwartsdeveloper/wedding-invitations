@@ -1,0 +1,25 @@
+header,
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+header,
+.question,
+.time {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  background-image: url("/assets/img/1.jpg");
+}
+
+.question {
+  background-image: url("/assets/img/2.jpg");
+}
+
+.time {
+  background-image: url("/assets/img/3.jpg");
+}

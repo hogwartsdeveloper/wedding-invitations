@@ -48,18 +48,6 @@ $wedding-invitation-theme: mat.define-light-theme(
   margin: 0;
 }
 
-header,
-section {
-  width: 100vw;
-  height: 100vh;
-}
-
-header {
-  background-image: url("/assets/img/test-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 .map {
   text-align: center;
 }
