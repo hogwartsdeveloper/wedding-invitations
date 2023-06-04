@@ -5,7 +5,6 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-control',
@@ -13,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./control.component.scss'],
 })
 export class ControlComponent implements OnInit {
+  @ViewChild('control', { static: true }) control: ElementRef<HTMLDivElement>;
   @ViewChild('audio', { static: true }) audio: ElementRef<HTMLAudioElement>;
 
   sound = false;
@@ -24,7 +24,7 @@ export class ControlComponent implements OnInit {
     this.getScroll();
   }
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor() {}
 
   ngOnInit() {
     this.getFirstMusic();
@@ -69,6 +69,7 @@ export class ControlComponent implements OnInit {
     el?.scrollIntoView({ behavior: 'smooth' });
     this.currPage = this.currPage === this.maxPage ? 1 : ++this.currPage;
 
+    this.control.nativeElement.classList.remove('bottom');
     let top;
     switch (this.currPage) {
       case 1:
@@ -76,6 +77,7 @@ export class ControlComponent implements OnInit {
         break;
       case this.maxPage:
         top = window.innerHeight * this.maxPage;
+        this.controlBottom();
         break;
     }
 
@@ -86,5 +88,9 @@ export class ControlComponent implements OnInit {
         behavior: 'smooth',
       });
     }
+  }
+
+  controlBottom() {
+    this.control.nativeElement.classList.add('bottom');
   }
 }
