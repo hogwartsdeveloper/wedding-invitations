@@ -1,0 +1,71 @@
+.control {
+  position: sticky;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+
+  & > button {
+    margin-bottom: 10px;
+  }
+}
+
+.lang-menu {
+  position: relative;
+  padding: 10px;
+  color: #000000;
+}
+
+.selected-lang {
+  cursor: pointer;
+  display: flex;
+  line-height: 2;
+}
+
+.selected-lang:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+
+.lang-menu ul {
+  position: absolute;
+  left: 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  z-index: 1;
+}
+
+.lang-menu ul li {
+  list-style: none;
+  display: flex;
+  transition: 0.25s;
+  color: white;
+
+  &:hover {
+    background: white;
+    color: #000000;
+    border-radius: 5px;
+  }
+}
+
+.lang-menu ul li div {
+  width: 75px;
+  display: flex;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.selected-lang.kz:before {
+  background-image: url("/assets/img/kazakhstan.png");
+}
+
+.selected-lang.ru:before {
+  background-image: url("/assets/img/russia.png");
+}
