@@ -1,24 +1,4 @@
 <div class="control">
-  <div
-    class="lang-menu"
-    (mousemove)="openLangMenu(langMenu)"
-    (mouseleave)="closeLangMenu(langMenu)"
-  >
-    <div class="selected-lang" [ngClass]="selectedLang.name">
-      {{ selectedLang.name }}
-    </div>
-
-    <ul #langMenu>
-      <ng-container *ngFor="let lang of langs">
-        <li (click)="onSelectLang(lang); closeLangMenu(langMenu)">
-          <div class="selected-lang" [ngClass]="lang.name">
-            {{ lang.name }}
-          </div>
-        </li>
-      </ng-container>
-    </ul>
-  </div>
-
   <button mat-fab (click)="onSound()">
     <mat-icon>{{ sound ? "music_note" : "music_off" }}</mat-icon>
   </button>
