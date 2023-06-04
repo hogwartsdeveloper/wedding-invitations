@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ILanguage, LanguageEnum } from '../models/lang.model';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './control.component.html',
   styleUrls: ['./control.component.scss'],
 })
-export class ControlComponent {
+export class ControlComponent implements OnInit {
+  @ViewChild('audio', { static: true }) audio: ElementRef<HTMLAudioElement>;
+
   sound = false;
   currPage = 1;
   maxPage = 6;
@@ -23,6 +25,25 @@ export class ControlComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {
+    this.getFirstLang();
+  }
+
+  ngOnInit() {
+    const audioPlay = localStorage.getItem('audio');
+    if (audioPlay === 'play') {
+      this.audio.nativeElement
+        .play()
+        .then(() => {
+          this.sound = true;
+        })
+        .catch(() => {
+          this.sound = false;
+        });
+    }
+    this.audio.nativeElement.volume = 0.7;
+  }
+
+  getFirstLang() {
     const lang =
       this.translateService.currentLang ?? this.translateService.defaultLang;
 
@@ -52,5 +73,18 @@ export class ControlComponent {
 
   closeLangMenu(menu: HTMLUListElement) {
     menu.style.display = 'none';
+  }
+
+  onSound() {
+    this.sound = !this.sound;
+
+    if (this.sound) {
+      this.audio.nativeElement.play();
+      localStorage.setItem('audio', 'play');
+      return;
+    }
+
+    this.audio.nativeElement.pause();
+    localStorage.setItem('audio', 'pause');
   }
 }
