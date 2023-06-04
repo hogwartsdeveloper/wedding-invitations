@@ -87,6 +87,16 @@ header {
   background-image: url("/assets/img/3.jpg");
   position: relative;
 
+  p {
+    position: absolute;
+    font-weight: 100;
+    font-size: 20px;
+    white-space: nowrap;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   app-countdown {
     position: absolute;
     top: 25%;
