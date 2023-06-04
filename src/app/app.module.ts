@@ -7,7 +7,8 @@ import { QuestionnaireModule } from './questionnaire/questionnaire.module';
 import { ControlComponent } from './control/control.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, ControlComponent],
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     QuestionnaireModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule.forRoot([]),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  UntypedFormArray,
-  UntypedFormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { QuestionnaireService } from '../questionnaire.service';
 import { take } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-questionnaire',
@@ -21,13 +15,26 @@ export class QuestionnaireComponent {
     come: new FormControl(null, Validators.required),
   });
 
-  constructor(private questionnaireService: QuestionnaireService) {}
+  constructor(
+    private questionnaireService: QuestionnaireService,
+    private toastService: ToastrService
+  ) {}
 
   onSend() {
-    console.log(this.form);
     this.questionnaireService
       .send(this.form.getRawValue())
       .pipe(take(1))
-      .subscribe((res) => console.log(res));
+      .subscribe(
+        () => {
+          this.form.reset();
+          this.toastService.success('Жіберілді');
+        },
+        (res: any) => {
+          if (res?.status === 200) {
+            this.form.reset();
+            this.toastService.success('Жіберілді');
+          }
+        }
+      );
   }
 }
