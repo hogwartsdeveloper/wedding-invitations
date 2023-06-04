@@ -3,11 +3,13 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
-    border-radius: .1em;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.1em;
     width: 35px;
     overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
     font-size: 2rem;
     color: #333;
 
@@ -15,44 +17,50 @@
     .bottom,
     .top-flip,
     .bottom-flip {
-      height: .25em;
+      height: 0.25em;
       line-height: 1;
-      padding: .25em;
+      padding: 0.25em;
       overflow: hidden;
     }
 
     .top,
     .top-flip {
-      background-color: #f7f7f7;
-      border-top-right-radius: .1em;
-      border-top-left-radius: .1em;
+      background-color: transparent;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-top-right-radius: 0.1em;
+      border-top-left-radius: 0.1em;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .bottom,
     .bottom-flip {
-      background-color: white;
+      background-color: transparent;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       display: flex;
       align-items: flex-end;
-      border-bottom-right-radius: .1em;
-      border-bottom-left-radius: .1em;
+      border-bottom-right-radius: 0.1em;
+      border-bottom-left-radius: 0.1em;
     }
-
 
     .top-flip {
       position: absolute;
       animation: flip-top 250ms ease-in;
       transform-origin: bottom;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      width: 17px;
     }
 
     .bottom-flip {
       position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.5);
       bottom: 0;
       animation: flip-bottom 250ms ease-out 250ms;
       transform-origin: top;
       transform: rotateX(90deg);
+      width: 17px;
     }
-
   }
 }
 
@@ -71,7 +79,7 @@
 .container-segment {
   display: flex;
   flex-direction: column;
-  gap: .1em;
+  gap: 0.1em;
   align-items: center;
 
   .title {
@@ -81,6 +89,6 @@
 
   .segment {
     display: flex;
-    gap: .1em;
+    gap: 0.1em;
   }
 }
