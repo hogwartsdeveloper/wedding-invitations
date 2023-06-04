@@ -42,6 +42,18 @@ header {
   }
 }
 
+.owners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  & > p {
+    font-size: 40px;
+    color: #676767;
+  }
+}
+
 .question {
   background-image: url("/assets/img/2.jpg");
 }

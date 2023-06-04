@@ -19,7 +19,7 @@ export class ControlComponent implements OnInit {
 
   sound = false;
   currPage = 1;
-  maxPage = 7;
+  maxPage = 6;
   selectedLang: ILanguage;
   langs: ILanguage[] = [
     { value: LanguageEnum.Kz, name: 'kz' },
