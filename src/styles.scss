@@ -50,6 +50,11 @@ $wedding-invitation-theme: mat.define-light-theme(
 
 .map {
   text-align: center;
+
+  iframe {
+    max-width: 640px;
+    width: 100vw;
+  }
 }
 
 html,
@@ -58,7 +63,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .mat-mdc-fab.mat-accent,
