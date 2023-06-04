@@ -14,6 +14,7 @@ export class QuestionnaireComponent {
     name: new FormControl('', Validators.required),
     come: new FormControl(null, Validators.required),
   });
+  isSend = false;
 
   constructor(
     private questionnaireService: QuestionnaireService,
@@ -21,6 +22,7 @@ export class QuestionnaireComponent {
   ) {}
 
   onSend() {
+    this.isSend = true;
     this.questionnaireService
       .send(this.form.getRawValue())
       .pipe(take(1))
@@ -28,12 +30,17 @@ export class QuestionnaireComponent {
         () => {
           this.form.reset();
           this.toastService.success('Жіберілді');
+          this.isSend = false;
         },
         (res: any) => {
           if (res?.status === 200) {
             this.form.reset();
             this.toastService.success('Жіберілді');
+            this.isSend = false;
+            return;
           }
+
+          this.toastService.error('Қате');
         }
       );
   }

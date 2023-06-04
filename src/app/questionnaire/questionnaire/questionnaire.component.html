@@ -16,6 +16,7 @@
   </div>
 
   <button mat-button class="sign" type="submit" [disabled]="form.invalid">
-    Жіберу
+    <mat-spinner *ngIf="isSend"></mat-spinner>
+    <ng-container *ngIf="!isSend">Жіберу</ng-container>
   </button>
 </form>

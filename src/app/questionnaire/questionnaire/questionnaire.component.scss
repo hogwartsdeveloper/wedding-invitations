@@ -58,3 +58,11 @@ form {
 button[disabled] {
   opacity: 0.5;
 }
+
+button {
+  mat-spinner {
+    width: 20px !important;
+    height: 20px !important;
+    --mdc-circular-progress-active-indicator-color: green;
+  }
+}
