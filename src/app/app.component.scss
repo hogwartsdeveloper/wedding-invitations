@@ -56,6 +56,9 @@ header {
 
 .question {
   background-image: url("/assets/img/2.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .time {

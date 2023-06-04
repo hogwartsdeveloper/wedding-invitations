@@ -1,11 +1,21 @@
 <form [formGroup]="form" (submit)="onSend()">
-    <input type="text" placeholder="name" formControlName="name">
+  <div>
+    <span>Есімініз</span>
+    <input type="text" placeholder="name" formControlName="name" />
+  </div>
 
-    <input type="radio" id="yes" value="true" formControlName="come">
-    <label for="yes">Yes</label>
+  <div>
+    <span>Тойға келесіз бе?</span>
+    <div class="radio">
+      <input type="radio" id="yes" value="true" formControlName="come" />
+      <label for="yes">Ия</label>
 
-    <input type="radio" id="no" value="false" formControlName="come">
-    <label for="no">No</label>
+      <input type="radio" id="no" value="false" formControlName="come" />
+      <label for="no">Жоқ</label>
+    </div>
+  </div>
 
-    <button type="submit">Send</button>
+  <button mat-button class="sign" type="submit" [disabled]="form.invalid">
+    Жіберу
+  </button>
 </form>
