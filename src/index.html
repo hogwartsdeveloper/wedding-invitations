@@ -7,52 +7,50 @@
     <meta name="description" content="Приглашение на свадьбу" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1>Zhannur & Altyn</h1>
-      <h1>04.08.2023</h1>
-    </header>
-    <section class="text"></section>
-    <section class="locate">
-      <div class="map">
+    <app-root></app-root>
+    <div class="map">
+      <a
+        class="dg-widget-link"
+        href="http://2gis.kz/nur_sultan/firm/70000001028359535/center/71.497220993042,51.14653658756111/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap"
+        >Посмотреть на карте Астаны</a
+      >
+      <div class="dg-widget-link">
         <a
-          class="dg-widget-link"
-          href="http://2gis.kz/nur_sultan/firm/70000001028359535/center/71.497220993042,51.14653658756111/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap"
-          >Посмотреть на карте Астаны</a
-        >
-        <div class="dg-widget-link">
-          <a
-            href="http://2gis.kz/nur_sultan/firm/70000001028359535/photos/70000001028359535/center/71.497220993042,51.14653658756111/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos"
-            >Фотографии компании</a
-          >
-        </div>
-        <div class="dg-widget-link">
-          <a
-            href="http://2gis.kz/nur_sultan/center/71.497215,51.146036/zoom/16/routeTab/rsType/bus/to/71.497215,51.146036╎Merdan Hall, гостинично-ресторанный комплекс?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route"
-            >Найти проезд до Merdan Hall, гостинично-ресторанный комплекс</a
-          >
-        </div>
-        <script
-          charset="utf-8"
-          src="https://widgets.2gis.com/js/DGWidgetLoader.js"
-        ></script>
-        <script charset="utf-8">
-          new DGWidgetLoader({
-            width: 640,
-            height: 600,
-            borderColor: "#a3a3a3",
-            pos: { lat: 51.14653658756111, lon: 71.497220993042, zoom: 16 },
-            opt: { city: "nur_sultan" },
-            org: [{ id: "70000001028359535" }],
-          });
-        </script>
-        <noscript style="color: #c00; font-size: 16px; font-weight: bold"
-          >Виджет карты использует JavaScript. Включите его в настройках вашего
-          браузера.</noscript
+          href="http://2gis.kz/nur_sultan/firm/70000001028359535/photos/70000001028359535/center/71.497220993042,51.14653658756111/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos"
+          >Фотографии компании</a
         >
       </div>
-    </section>
-    <app-root></app-root>
+      <div class="dg-widget-link">
+        <a
+          href="http://2gis.kz/nur_sultan/center/71.497215,51.146036/zoom/16/routeTab/rsType/bus/to/71.497215,51.146036╎Merdan Hall, гостинично-ресторанный комплекс?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route"
+          >Найти проезд до Merdan Hall, гостинично-ресторанный комплекс</a
+        >
+      </div>
+      <script
+        charset="utf-8"
+        src="https://widgets.2gis.com/js/DGWidgetLoader.js"
+      ></script>
+      <script charset="utf-8">
+        new DGWidgetLoader({
+          width: 640,
+          height: 600,
+          borderColor: "#a3a3a3",
+          pos: { lat: 51.14653658756111, lon: 71.497220993042, zoom: 16 },
+          opt: { city: "nur_sultan" },
+          org: [{ id: "70000001028359535" }],
+        });
+      </script>
+      <noscript style="color: #c00; font-size: 16px; font-weight: bold"
+        >Виджет карты использует JavaScript. Включите его в настройках вашего
+        браузера.</noscript
+      >
+    </div>
   </body>
 </html>

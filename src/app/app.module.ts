@@ -7,9 +7,13 @@ import { QuestionnaireModule } from './questionnaire/questionnaire.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ControlComponent } from './control/control.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ControlComponent],
   imports: [
     BrowserModule,
     CountdownModule,
@@ -21,6 +25,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
         deps: [HttpClient],
       },
     }),
+    MatButtonModule,
+    MatIconModule,
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
