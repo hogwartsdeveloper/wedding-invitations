@@ -35,7 +35,7 @@ export class CountdownComponent implements AfterViewInit, OnDestroy {
   ]
 
   ngAfterViewInit() {
-    const countToDate = new Date('2023-08-04 19:00:00');
+    const countToDate = new Date('2026-06-06 19:00:00');
     let previousTimeBetweenDates: number;
 
     this.interval = setInterval(() => {
