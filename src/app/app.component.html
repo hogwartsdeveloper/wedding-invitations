@@ -40,6 +40,12 @@
   </section>
   <section class="time">
     <p>Той салтанатына дейн</p>
+    <mat-calendar
+      class="calendar"
+      [selected]="weddingDate"
+      [startAt]="weddingDate"
+      [dateFilter]="lockDate"
+    ></mat-calendar>
     <app-countdown></app-countdown>
   </section>
 </div>

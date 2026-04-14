@@ -6,6 +6,13 @@ import { AfterViewInit, Component, ElementRef, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
+  readonly weddingDate = new Date(2026, 5, 6);
+  readonly lockDate = (d: Date | null): boolean =>
+    !!d &&
+    d.getFullYear() === 2026 &&
+    d.getMonth() === 5 &&
+    d.getDate() === 6;
+
   private observer?: IntersectionObserver;
 
   constructor(private host: ElementRef<HTMLElement>) {}

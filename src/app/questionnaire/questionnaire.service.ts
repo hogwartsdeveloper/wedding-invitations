@@ -13,8 +13,8 @@ export class QuestionnaireService {
   }, ɵFormGroupRawValue<{ name: FormControl<string | null>; come: FormControl<boolean | null> }>, any>) {
     return this.http.post('https://postmail.invotes.com/send', {
       subject: data.name,
-      text: data.come,
-      "access_token": "3yfevk9cu6zxyzt42qjqqgk6"
+      text: data.come ? 'Келемін' : 'Келмеймін',
+      "access_token": "2w8f150uysqzphlwrhrmwyvh"
     });
   }
 }
