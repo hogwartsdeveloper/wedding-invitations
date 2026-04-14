@@ -172,6 +172,34 @@ header {
   border-radius: 6px;
   pointer-events: none;
   user-select: none;
+
+  ::ng-deep {
+    .mat-calendar-body-cell-content,
+    .mat-calendar-body-label,
+    .mat-calendar-table-header th,
+    .mat-calendar-period-button,
+    .mat-calendar-arrow,
+    .mat-calendar-previous-button,
+    .mat-calendar-next-button {
+      color: #fff !important;
+    }
+
+    .mat-calendar-arrow {
+      fill: #fff !important;
+    }
+
+    .mat-calendar-body-disabled > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .mat-calendar-body-selected {
+      background-color: transparent !important;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.5) !important;
+      color: #fff !important;
+      box-shadow: none !important;
+    }
+  }
 }
 
 @media only screen and (min-width: 1100px) {
